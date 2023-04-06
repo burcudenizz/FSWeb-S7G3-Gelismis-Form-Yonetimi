@@ -26,6 +26,7 @@ label {
   justify-content: center;
   padding: 5px;
 }
+
 input {
   margin-left: 15%;
   margin-right: 15%;
@@ -44,17 +45,31 @@ button {
 input.larger {
   width: 30px;
   height: 30px;
-  display: inline-block;
-  justify-content: center;
+  margin-left: 50%;
 }
+
 button:hover {
   background-color: #2b003b;
   color: #fff;
 }
 .field-error {
   margin: 5px;
-  color: #616161;
-  text-shadow: 1px 2px #bc00f0;
-  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  color: #fcfcfc;
+  text-shadow: 2px 3px #d139fa;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 5px;
   text-align: center;
+}
+li {
+  list-style: none;
+}
+.RegisteredContent {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 10px;
+  padding: 15px;
 }
