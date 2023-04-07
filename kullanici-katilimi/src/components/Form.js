@@ -4,6 +4,17 @@ import axios from "axios";
 import * as yup from "yup";
 import RegisteredUser from "./RegisteredUser";
 
+/* YUP ADIMLARI 
+
+1.yup kurmak,import etmek,
+2.şema oluşturmak,
+3.hatalar için state oluşturmak,
+4.hataları kontrol eden fonksiyon oluşturmak,
+5.Bu fonksiyonu her değişiklik sonrası tekrar çalıştırmak
+6.hata mesajlarını sayfada görüntülemek //<p> kısmına yazdık.
+7.Hata varsa formun gönderilmesini engelle.
+*/
+
 const formSchema = yup.object().shape({
   name: yup
     .string()
@@ -16,7 +27,7 @@ const formSchema = yup.object().shape({
   email: yup
     .string()
     .email()
-    .required("Mail is required")
+    .required("this must be a valid email")
     .notOneOf(
       ["waffle@syrup.com"],
       "This email has already been added before."
@@ -135,6 +146,7 @@ export default function Form() {
             placeholder="example@example.com"
             value={user.email}
             onChange={handleChange}
+            data-cy="test-email"
           />
           {errors.email !== "" && (
             <div className="field-error">{errors.email}</div>
@@ -164,11 +176,7 @@ export default function Form() {
           />
           I agree to the terms and conditions as set out by the user agreement.
         </label>
-        <button
-          type="submit"
-          onClick={handleSubmit}
-          disabled={buttonDisabledMi}
-        >
+        <button type="submit" onClick={handleSubmit}>
           SUBMIT
         </button>
         <button type="reset" onClick={handleReset}>
